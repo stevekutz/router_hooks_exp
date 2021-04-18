@@ -9,7 +9,7 @@ const About = ({useScrollToTop}) => {
 
     // let currentPath = useScrollToTop().pathname;
     let locationPath = useLocation().pathname;
-    let historyPath = useHistory();
+    let historyPath = useHistory().location.pathname;
 
     console.log('+++++>', historyPath);
 
@@ -17,7 +17,7 @@ const About = ({useScrollToTop}) => {
         <div>
             <h1> About Page </h1>
             <p> location: current path is:  {locationPath} </p>
-            <p> history: current path is:  </p>
+            <p> history: current path is:  {historyPath} </p>
             <p style = {{color: 'orange'}} > {TextJunk} </p>
         
             <FooterNav />

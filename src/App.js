@@ -14,7 +14,7 @@ import {
 } from 'react-router-dom';
 
 import useScrollToTop from './customHooks/useScrollToTop';
-
+import useHistoryLog from './customHooks/useHistoryLog';
 
 // // custom hook to reset page to top
 // const useScrollToTop = () => {
@@ -37,7 +37,7 @@ import useScrollToTop from './customHooks/useScrollToTop';
 
 function App() {
 
-    const [pathLog, SetPathLog] = useState([]);        
+    // const [pathLog, SetPathLog] = useState([]);        
 
     // const path = useLocation()   
 
@@ -51,7 +51,7 @@ function App() {
         <div>
             <Router>
                 <Switch>
-                    <Route  exact path = '/' > <Home useScrollToTop = {useScrollToTop} /> </Route>
+                    <Route  exact path = '/' > <Home useScrollToTop = {useScrollToTop} useHistoryLog = {useHistoryLog}/> </Route>
                     <Route path = '/about'> <About useScrollToTop = {useScrollToTop} /> </Route>
                     <Route path = '/other'> <Other useScrollToTop = {useScrollToTop} /> </Route>
                     <Route path = '/paths'> <Paths useScrollToTop = {useScrollToTop} /> </Route>

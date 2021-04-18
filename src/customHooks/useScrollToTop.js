@@ -13,7 +13,7 @@ const useScrollToTop = () => {
 
     }, [locationHook]);
 
-    return locationHook;
+    // return locationHook;
 
 
 }
