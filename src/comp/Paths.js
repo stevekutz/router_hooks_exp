@@ -1,23 +1,18 @@
 import React from 'react';
 import FooterNav from './FooterNav';
-
 import {TextJunk} from '../data/content';
 import {Link} from 'react-router-dom';
 
-const Home = (props) => {
+const Paths = () => {
     
-    props.useScrollToTop();
-    console.log('?????  ', props);
-
     return (
         <div>
-            <h1> Home </h1>
-            <p> {TextJunk} </p>
-            <p> History:  {props.historyHook} </p>
+            <h1> Paths Page </h1>
+            <p style = {{color: 'blue'}} > history of paths:  </p>
         
             <FooterNav />
         </div>
     )
 }
 
-export default Home;
+export default Paths;

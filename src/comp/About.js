@@ -1,15 +1,27 @@
 import React from 'react';
+import FooterNav from './FooterNav';
 import {TextJunk} from '../data/content';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useHistory} from 'react-router-dom';
 
-const About = () => {
+const About = ({useScrollToTop}) => {
     
+    useScrollToTop();
+
+    // let currentPath = useScrollToTop().pathname;
+    let locationPath = useLocation().pathname;
+    let historyPath = useHistory();
+
+    console.log('+++++>', historyPath);
+
     return (
         <div>
             <h1> About Page </h1>
+            <p> location: current path is:  {locationPath} </p>
+            <p> history: current path is:  </p>
             <p style = {{color: 'orange'}} > {TextJunk} </p>
         
-            <Link to = '/'> Return to Home </Link>
+            <FooterNav />
+
         </div>
     )
 }
