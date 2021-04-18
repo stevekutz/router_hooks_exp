@@ -7,7 +7,7 @@ const useScrollToTop = () => {
     const locationHook = useLocation();
 
     useEffect( () => {
-        console.log(" >> locationHook >>>>>> ", locationHook);
+        // console.log(" >> locationHook >>>>>> ", locationHook);
         window.scrollTo({top: 0});
 
 

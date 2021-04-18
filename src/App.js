@@ -37,16 +37,6 @@ import useHistoryLog from './customHooks/useHistoryLog';
 
 function App() {
 
-    // const [pathLog, SetPathLog] = useState([]);        
-
-    // const path = useLocation()   
-
-    // useEffect( () => {
-    //     SetPathLog(arr => [...arr, path.pathname]);
-    
-    // });
-
-
     return (
         <div>
             <Router>

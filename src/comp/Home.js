@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import FooterNav from './FooterNav';
 
 import {TextJunk} from '../data/content';
@@ -6,23 +6,40 @@ import {Link} from 'react-router-dom';
 
 const Home = (props) => {
     
-    const [arr, setArr] = useState([]);
+    props.useScrollToTop();
+    props.useHistoryLog();
 
-    // props.useHistoryLog();
-    let val = props.useHistoryLog().length;
+    // const [arr, setArr] = useState([]);
+    // const [savedArr, setSavedArr] = useState([]);
 
-    useEffect( () => {
-        setArr(val);
+
+    // const savedArr = useRef([]);
+
+    // let lengthVal = props.useHistoryLog().length;
     
-    },[arr, val]);
 
-    // console.log('val -> ', val);
+    // const addHistory = () => {
+    //     setArr( (arr) => [...arr, lengthVal])
+    //     // savedArr.current = (savedArr.current) => [...savedArr.current, lengthVal];
+    //     savedArr.current = savedArr.current.concat([lengthVal]);
+    // }
+    
+    
+    // useEffect( () => {
+    //     setArr( lengthVal  );
+    //     // arr.push(lengthVal);
+    //     // console.log('val -> ', arr);
+    // },[lengthVal]);
+
+    // console.log('savedArr   ', savedArr);
 
     return (
         <div>
             <h1> Home </h1>
             <p> {TextJunk} </p>
-            <p> History: {arr}  </p>
+            <p> History:  </p>
+
+            
         
             <FooterNav />
 
@@ -32,3 +49,9 @@ const Home = (props) => {
 }
 
 export default Home;
+
+
+    // <button onClick = {addHistory}>
+    
+    // Add to history
+    // </button>
