@@ -13,15 +13,20 @@ const useHistoryLog = ( key = 'routeVal', initialState = null) => {
     }); 
 
     
+    let historyPath = useHistory().location.pathname;
 
     useEffect( () => {
-        // console.log(" >> history Hook >>>>>> ", historyHook);
+        console.log(" >> history Hook >>>>>> ", historyPath);
         localStorage.setItem( key, pathLog);
 
     }, [key, pathLog]);
 
     
-    const clearLog = () => localStorage.removeItem(key);
+    const clearLog = () => {
+        console.log("CLEARED")
+        console.log(' key is ', key);
+        localStorage.removeItem(key);
+    }
 
 
     return [pathLog, setPathLog, clearLog];
