@@ -12,6 +12,8 @@ const useHistoryLog = ( key = 'routeVal', initialState = null) => {
     
     }); 
 
+    const [clearedStatus, setClearedStatus] = useState(false);
+
     
     let historyPath = useHistory().location.pathname;
 
@@ -26,10 +28,12 @@ const useHistoryLog = ( key = 'routeVal', initialState = null) => {
         console.log("CLEARED")
         console.log(' key is ', key);
         localStorage.removeItem(key);
+        setClearedStatus(true);
+        setPathLog("RESET");
     }
 
 
-    return [pathLog, setPathLog, clearLog];
+    return [pathLog, setPathLog, clearLog, clearedStatus];
 
 }
 

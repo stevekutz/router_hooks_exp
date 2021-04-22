@@ -9,12 +9,13 @@ const Home = (props) => {
     props.useScrollToTop();
     // props.useHistoryLog();
 
-    const [value, setValue, clearValue] = props.useHistoryLog(
+    const [value, setValue, clearValue, clearedStatus] = props.useHistoryLog(
         "routeVal",
         "Hello World!!!"
     );
 
-
+    console.log('clearedStatus ', clearedStatus);
+    
     // const [arr, setArr] = useState([]);
     // const [savedArr, setSavedArr] = useState([]);
     // const savedArr = useRef([]);
@@ -27,12 +28,9 @@ const Home = (props) => {
     // }    
     
     // useEffect( () => {
-    //     setArr( lengthVal  );
-    //     // arr.push(lengthVal);
-    //     // console.log('val -> ', arr);
-    // },[lengthVal]);
-
-    // console.log('savedArr   ', savedArr);
+    //     setValue(" RESET world !");
+    //     console.log("useEffect called ")
+    // }, []);
 
     return (
         <div>
